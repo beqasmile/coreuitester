@@ -57,6 +57,12 @@ const TheHeader = () => {
         <CHeaderNavItem className="px-3" >
           <CHeaderNavLink to="/dashboard">Dashboard</CHeaderNavLink>
         </CHeaderNavItem>
+        <CHeaderNavItem className="px-3" >
+          <CHeaderNavLink to="/drivers">Drivers</CHeaderNavLink>
+        </CHeaderNavItem>
+        <CHeaderNavItem className="px-3" >
+          <CHeaderNavLink to="/dashboard">Cars</CHeaderNavLink>
+        </CHeaderNavItem>
         <CHeaderNavItem  className="px-3">
           <CHeaderNavLink to="/users">Users</CHeaderNavLink>
         </CHeaderNavItem>
