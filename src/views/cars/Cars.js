@@ -30,7 +30,7 @@ const Cars = () => {
   const [page, setPage] = useState(currentPage)
 
   const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/drivers?page=${newPage}`)
+    currentPage !== newPage && history.push(`/cars?page=${newPage}`)
   }
 
   useEffect(() => {
@@ -42,12 +42,12 @@ const Cars = () => {
       <CCol xl={6}>
         <CCard>
           <CCardHeader>
-            Drivers
+            Cars
             <small className="text-muted"> list</small>
           </CCardHeader>
           <CCardBody>
           <CDataTable
-            items={driversData}
+            items={carsData}
             fields={[
               { key: 'name', _classes: 'font-weight-bold' },
               'registered',{ key: 'driverlicense', _classes: 'font-weight-bold' }, 'role', 'status'
@@ -57,7 +57,7 @@ const Cars = () => {
             itemsPerPage={10}
             activePage={page}
             clickableRows
-            onRowClick={(item) => history.push(`/drivers/${item.id}`)}
+            onRowClick={(item) => history.push(`/cars/${item.id}`)}
             scopedSlots = {{
               'status':
                 (item)=>(

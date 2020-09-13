@@ -2,11 +2,11 @@ import React from 'react'
 import { CCard, CCardBody, CCardHeader, CCol, CRow } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import carsData from './CarssData'
+import carsData from './CarsData'
 
 const Car = ({match}) => {
-  const driver = driversData.find( driver => driver.id.toString() === match.params.id)
-  const driverDetails = driver ? Object.entries(driver) : 
+  const car = carsData.find( car => car.id.toString() === match.params.id)
+  const carDetails = car ? Object.entries(car) : 
     [['id', (<span><CIcon className="text-muted" name="cui-icon-ban" /> Not found</span>)]]
 
   return (
@@ -14,13 +14,13 @@ const Car = ({match}) => {
       <CCol lg={6}>
         <CCard>
           <CCardHeader>
-            Driver id: {match.params.id}
+            Car id: {match.params.id}
           </CCardHeader>
           <CCardBody>
               <table className="table table-striped table-hover">
                 <tbody>
                   {
-                    driverDetails.map(([key, value], index) => {
+                    carDetails.map(([key, value], index) => {
                       return (
                         <tr key={index.toString()}>
                           <td>{`${key}:`}</td>
