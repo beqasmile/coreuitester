@@ -38,6 +38,8 @@ const Cars = () => {
   }, [currentPage, page])
 
   return (
+
+    
     <CRow>
       <CCol xl={6}>
         <CCard>
