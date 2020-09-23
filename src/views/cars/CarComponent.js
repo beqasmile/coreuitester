@@ -44,28 +44,73 @@ class CarComponent extends React.Component {
       
       
     }
-  
-  
-    render() {
+     render() {
       const { error, isLoaded, items } = this.state;
       if (error) {
-        return <div>Error: {error.message}</div>;
+        return <div>MyError: {error.message}</div>;
       } else if (!isLoaded) {
         return <div>Loading...</div>;
-      } else if (items)
-      {
+      } else {
         return (
-          <ul>
-            {items.map(item => (
-               <li key={item.ID}>
-                             {item.DriverName} {item.Age}
-                        </li>
-            ))}
-          </ul>
+            <CRow>
+            <CCol xl={6}>
+              <CCard>
+                <CCardHeader>
+                  Cars
+                  <small className="text-muted"> list</small>
+                </CCardHeader>
+                <CCardBody>
+                <CDataTable
+                  items={items}
+                  fields={[
+                    { key: 'ID', _classes: 'font-weight-bold' },
+                    'DriverName',{ key: 'completed', _classes: 'font-weight-bold' }
+                  ]}
+                  hover
+                  striped
+                  itemsPerPage={10}
+                 
+                  clickableRows
+                
+                 
+                />
+              
+                </CCardBody>
+              </CCard>
+            </CCol>
+          </CRow>
+           
+           
         );
       }
-  
     }
+
+
+    
+  
+  
+    // render() {
+    //   const { error, isLoaded, items } = this.state;
+    //   if (error) {
+    //     return <div>Error: {error.message}</div>;
+    //   } else if (!isLoaded) {
+    //     return <div>Loading...</div>;
+    //   } else if (items)
+    //   {
+    //     return (
+    //       <ul>
+    //         {items.map(item => (
+    //            <li key={item.ID}>
+    //                          {item.DriverName} {item.Age}
+    //                     </li>
+    //         ))}
+    //       </ul>
+    //     );
+    //   }
+  
+    // }
+
+
 
 
     // componentDidMount() {
@@ -92,46 +137,7 @@ class CarComponent extends React.Component {
     //     )
     // }
   
-    // render() {
-    //   const { error, isLoaded, items } = this.state;
-    //   if (error) {
-    //     return <div>MyError: {error.message}</div>;
-    //   } else if (!isLoaded) {
-    //     return <div>Loading...</div>;
-    //   } else {
-    //     return (
-    //         <CRow>
-    //         <CCol xl={6}>
-    //           <CCard>
-    //             <CCardHeader>
-    //               Cars
-    //               <small className="text-muted"> list</small>
-    //             </CCardHeader>
-    //             <CCardBody>
-    //             <CDataTable
-    //               items={items}
-    //               fields={[
-    //                 { key: 'id', _classes: 'font-weight-bold' },
-    //                 'title',{ key: 'completed', _classes: 'font-weight-bold' }
-    //               ]}
-    //               hover
-    //               striped
-    //               itemsPerPage={10}
-                 
-    //               clickableRows
-                
-                 
-    //             />
-              
-    //             </CCardBody>
-    //           </CCard>
-    //         </CCol>
-    //       </CRow>
-           
-           
-    //     );
-    //   }
-    // }
+   
   }
 
   export default CarComponent;
