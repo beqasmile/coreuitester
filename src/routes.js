@@ -1,5 +1,6 @@
 import React from 'react';
 import CarComponent from './views/cars/CarComponent';
+import CarSingleComponent from './views/cars/CarSingleComponent'
 
 const Toaster = React.lazy(() => import('./views/notifications/toaster/Toaster'));
 const Tables = React.lazy(() => import('./views/base/tables/Tables'));
@@ -88,7 +89,7 @@ const routes = [
   { path: '/drivers', exact: true,  name: 'Drivers', component: Drivers },
   { path: '/drivers/:id', exact: true, name: 'Driver Details', component: Driver },
   { path: '/cars', exact: true,  name: 'Cars', component: CarComponent },
-  { path: '/cars/:id', exact: true, name: 'Car Details', component: Car }
+  { path: '/cars/:id', exact: true, name: 'Car Details', component: CarSingleComponent }
 ];
 
 

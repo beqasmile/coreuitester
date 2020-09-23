@@ -19,7 +19,19 @@ class CarComponent extends React.Component {
         isLoaded: false,
         items: []
       };
+     // this.history = useHistory();
+      //this.queryPage = useLocation().search.match(/page=([0-9]+)/, '')
+      //this.currentPage = Number(this.queryPage && this.queryPage[1] ? this.queryPage[1] : 1)
+      // [page, setPage] = useState(currentPage)
     }
+    // pageChange = newPage => {
+    //   currentPage !== newPage && history.push(`/cars?page=${newPage}`)
+    // }
+  
+    // useEffect() {
+    //   currentPage !== page && setPage(currentPage)
+    // }, [currentPage, page])
+  
 
     componentDidMount() {
 
@@ -64,14 +76,14 @@ class CarComponent extends React.Component {
                   items={items}
                   fields={[
                     { key: 'ID', _classes: 'font-weight-bold' },
-                    'DriverName',{ key: 'completed', _classes: 'font-weight-bold' }
+                    'DriverName',{ key: 'Age', _classes: 'font-weight-bold' }, 'Address', 'DriversLessonTypeValue'
                   ]}
                   hover
                   striped
                   itemsPerPage={10}
-                 
+                  
                   clickableRows
-                
+                  
                  
                 />
               
